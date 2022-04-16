@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Write an Email</title>
+</head>
+<body>
+<form action="/send_email/" method="post" novalidate="novalidate" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in email_form %}
+        <div>
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+                <span style="color: orange">{{ field.help_text }}</span>
+            {% endif %}
+        </div>
+        <br>
+    {% endfor %}
+    <input type="submit" value="Send">
+</form>
+</body>
+</html>

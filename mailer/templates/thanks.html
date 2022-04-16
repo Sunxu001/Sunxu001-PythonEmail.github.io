@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanks</title>
+</head>
+<body>
+You have sent<b>{{ count }}</b>email to the following address：{{ file }}
+{% for email in to %}
+    <li>{{ email }}</li>
+{% endfor %}
+Thanks for your use!
+</body>
+</html>
